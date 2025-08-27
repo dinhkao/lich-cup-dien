@@ -24,3 +24,10 @@ Outage lookup (lịch cúp điện)
 - Run lookup: `. .venv/bin/activate && python scripts/lich_cup_dien.py --code PB05080064649`
 - Headed mode: `python scripts/lich_cup_dien.py --code <MAKH> --headed`
 - Trigger phrase (for agent): say "lịch cúp điện <MAKH>" and the agent will run the script per `agent_workflows.yaml`.
+
+Zalo Web check (persistent Firefox)
+- One-time login: `. .venv/bin/activate && python scripts/zalo_check.py login --headed`
+  - A Firefox window opens with Zalo Web. Scan the QR to log in.
+  - Close the window after login. Session is saved under `.auth/zalo-firefox`.
+- Verify/list chats: `python scripts/zalo_check.py check --headed`
+  - Prints `LOGIN_STATE` and lists some chat names if logged in.
