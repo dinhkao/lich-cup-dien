@@ -1,0 +1,12 @@
+workflows:
+  - name: lich_cup_dien_lookup
+    trigger_phrases:
+      - "lịch cúp điện"
+      - "lich cup dien"
+    description: Khi người dùng yêu cầu "lịch cúp điện <MÃ KH>", chạy tra cứu và trả kết quả.
+    action:
+      command: "python scripts/lich_cup_dien.py --code {ma_khach_hang}"
+      extract_params:
+        - name: ma_khach_hang
+          pattern: "(?i)(?:lịch cúp điện|lich cup dien)\s+([A-Za-z0-9]+)"
+
